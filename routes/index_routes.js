@@ -18,13 +18,22 @@ router.post('/add-products',async (req, res) => {
 });
 
 router.get('/all-products/:id',async (req, res) => {
-    console.log(req.params.id);
     const product = await controller.getProductById(req.params.id)
     res.send(product);
 });
 
 router.put('/update-product/:id',async (req, res) => {
     const products = await controller.updateProduct(req.params.id, req.body)
+    res.send(products);
+});
+
+router.delete('/delete-product/:id',async (req, res) => {
+    const products = await controller.deleteProductById(req.params.id)
+    res.send(products);
+});
+
+router.put('/update-product-quantity/:id',async (req, res) => {
+    const products = await controller.updateProductQuantity(req.params.id, req.body.quantity)
     res.send(products);
 });
 
