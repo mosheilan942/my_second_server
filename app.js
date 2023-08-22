@@ -21,11 +21,16 @@ const getUsers = async () => {
  };
 
 async function main() {
+
+  // DB of products
   await app.use("/api", indexRoute);
+
+  // DB of users
+  await app.use("/users", indexRoute);
 
   app.listen(port, () => {
     console.log(`Server is up and running on port:${port}`);
-     getUsers();
+    //  getUsers();
      return true
   });
  
