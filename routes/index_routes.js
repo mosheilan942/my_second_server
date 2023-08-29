@@ -5,7 +5,6 @@ const router = all_express.Router();
 import * as controller from '../controller/controller_index.js';
 import {checkAdmin} from '../my-middleware/my-middleware.js'
 const app = all_express.default();
-app.use(all_express.json());
 
 
 // router for products

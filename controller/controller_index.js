@@ -114,7 +114,8 @@ async function getUserById(res, urlID, bodyID) {
     }
 };
 
-export {getAllprodcts, getAllusers, addUser, addProducts, getProductById, getUserById, updateProduct, deleteProductById, updateProductQuantity};
+export {getAllprodcts, getAllusers, addUser, addProducts, getProductById, 
+    getUserById, updateProduct, deleteProductById, updateProductQuantity};
 
 
 

@@ -3,11 +3,15 @@ import morgan from "morgan";
 import { router as indexRoute } from "./routes/index_routes.js";
 import axios from "axios";
 import * as DAL from "./DAL/dal.js";
+import cors from "cors"
 
 const app = all_express.default();
 app.use(all_express.json());
 const port = 3000;
 app.use(morgan("dev"));
+app.use(cors({
+  origin: '*'
+}));
 
 const getUsers = async () => {
   axios.get('https://fakestoreapi.com/products')
@@ -19,6 +23,7 @@ const getUsers = async () => {
  })
   .catch(error => console.error(error));
  };
+ 
 
 async function main() {
 
